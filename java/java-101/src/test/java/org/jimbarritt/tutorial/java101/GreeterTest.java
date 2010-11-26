@@ -17,4 +17,13 @@ public class GreeterTest {
 		assertThat(greeting, is("Hello 'Jim'"));
 	}
 	
+	@Test
+	public void saysHelloToJohn() {
+		Greeter greeter = new Greeter();
+		
+		String greeting = greeter.hello("John");
+		
+		assertThat(greeting, is("Hello 'John'"));
+	}
+	
 }
