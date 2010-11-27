@@ -7,8 +7,8 @@ public class StringPadding {
 		StringBuilder sb = new StringBuilder();
 		for (int i=0;i<width-input.length();++i) {
 			sb.append(" ");
-		}
-		sb.append(input);
+		}		
+		sb.append(input);		
 		return sb.toString();
 	}
 
