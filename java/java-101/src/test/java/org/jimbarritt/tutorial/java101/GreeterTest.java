@@ -9,7 +9,7 @@ import org.junit.Test;
 public class GreeterTest {
 
 	@Test
-	public void saysHelloToJim() {		
+	public void says_hello_to_jim() {		
 		Greeter greeter = new Greeter();
 		
 		String greeting = greeter.hello("Jim");
@@ -18,7 +18,7 @@ public class GreeterTest {
 	}
 	
 	@Test
-	public void saysHelloToJohn() {
+	public void says_hello_to_john() {
 		Greeter greeter = new Greeter();
 		
 		String greeting = greeter.hello("John");
