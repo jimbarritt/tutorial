@@ -6,7 +6,7 @@ TestCase("greeter behaviours", {
 
     test_says_hello_to_jim : function() {
     	var greeter = js101.Greeter();
-    	
+    	    
         console.log("greeter is " + greeter);
         
         var message = greeter.sayHelloTo("Jim");
