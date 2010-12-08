@@ -4,8 +4,11 @@ import static java.lang.String.format;
 
 public class Greeter {
 
-	public String hello(String name) {		
-		return format("Hello '%s'", name);
+	public String sayHelloTo(String name) {		
+		return format("Hello %s", name);
+	}
+
+	public void sendEmailTo(String string, String string2) {		
 	}
 
 }
