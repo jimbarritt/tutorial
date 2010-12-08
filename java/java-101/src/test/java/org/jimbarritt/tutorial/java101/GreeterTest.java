@@ -40,13 +40,12 @@ public class GreeterTest {
 	
 	@Test
 	@Ignore("Work in progress")
-	public void sends_email_to_jim() {
-		
+	public void sends_email_to_jim() {		
 		greeter.sendEmailTo("jim@planet-ix.com", "Hello Jim Via Email");
 		
 		Email email = mailClient.getLastEmail();
-		String messageBody = email.getMessageBody();
-		assertThat(messageBody, is("Hello Jim Via Email"));
+		String subjectBody = email.getSubject();
+		assertThat(subjectBody, is("Hello Jim Via Email"));
 	}
 		
 }

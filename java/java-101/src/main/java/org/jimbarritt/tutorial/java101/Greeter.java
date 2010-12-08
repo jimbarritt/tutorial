@@ -8,7 +8,7 @@ public class Greeter {
 		return format("Hello %s", name);
 	}
 
-	public void sendEmailTo(String string, String string2) {		
+	public void sendEmailTo(String emailAddress, String subject) {		
 	}
 
 }
