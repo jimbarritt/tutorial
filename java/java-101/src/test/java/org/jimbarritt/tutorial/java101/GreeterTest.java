@@ -26,16 +26,23 @@ public class GreeterTest {
 
 	@Test
 	public void says_hello_to_jim() {				
-		String greeting = greeter.sayHelloTo("Jim");
+		String message = greeter.sayHelloTo("Jim");
 		
-		assertThat(greeting, is("Hello Jim"));
+		assertThat(message, is("Hello Jim"));
 	}
 	
 	@Test
 	public void says_hello_to_dunc() {				
-		String greeting = greeter.sayHelloTo("Dunc");
+		String message = greeter.sayHelloTo("Dunc");
 		
-		assertThat(greeting, is("Hello Dunc"));
+		assertThat(message, is("Hello Dunc"));
+	}
+	
+	@Test
+	public void says_hello_to_jim_and_dunc() {
+		String message = greeter.sayHelloTo("Jim", "Dunc");
+		
+		assertThat(message, is("Hello Jim Dunc"));
 	}
 	
 	@Test
