@@ -8,7 +8,7 @@ public class Greeter {
 	
 	public String sayHelloTo(String... names) {
 		if (useForEachLoop) {
-			return buildStringWIthForEachLoop(names);
+			return buildStringWithForEachLoop(names);
 		}
 		return buildStringWithIndexedLoop(names);
 	}
@@ -26,7 +26,7 @@ public class Greeter {
 		return format("Hello %s", sb.toString());
 	}
 
-	private String buildStringWIthForEachLoop(String... names) {
+	private String buildStringWithForEachLoop(String... names) {
 		StringBuilder sb = new StringBuilder();
 
 		for (String name : names) {
