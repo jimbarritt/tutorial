@@ -4,7 +4,8 @@ import static com.jimbarritt.tutorial.oo_relationships.length.Length.lengthOf;
 
 public enum DistanceUnit {
 
-    centimetres(1), metres(100);
+    centimetres(1),
+    metres(100);
 
     private final double toCentimetresFactor;
 
