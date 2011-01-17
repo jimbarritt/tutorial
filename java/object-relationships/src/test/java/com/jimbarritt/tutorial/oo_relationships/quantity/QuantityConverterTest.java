@@ -2,18 +2,15 @@ package com.jimbarritt.tutorial.oo_relationships.quantity;
 
 import org.junit.*;
 
-import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.centimetres;
-import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.litres;
-import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.metres;
-import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.millilitres;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.*;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 
 public class QuantityConverterTest {
 
     @Test(expected = CannotConvertUnitsException.class)
     public void fails_if_try_to_convert_incompatible_units() {
-        new QuantityConverter(20, Unit.centimetres).to(metres);
+        new QuantityConverter(20, Unit.centimetres).to(millilitres);
     }
 
     @Test

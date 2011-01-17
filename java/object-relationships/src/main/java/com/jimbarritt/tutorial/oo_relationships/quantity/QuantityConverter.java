@@ -10,6 +10,6 @@ public class QuantityConverter {
     }
 
     public Quantity to(Unit newUnits) {
-        return originalUnits.convertTo(amount, newUnits);
+        return originalUnits.convertTo(newUnits, amount);
     }
 }

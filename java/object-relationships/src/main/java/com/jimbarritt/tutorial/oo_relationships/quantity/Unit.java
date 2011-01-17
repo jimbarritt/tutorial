@@ -31,7 +31,8 @@ public class Unit {
         return name;
     }
 
-    Quantity convertTo(double amount, Unit newUnits) {
+
+    Quantity convertTo(Unit newUnits, double amount) {
         if (this == newUnits) {
             return new Quantity(amount, this);
         }
@@ -47,9 +48,20 @@ public class Unit {
     }
 
     private boolean isNotCompatibleWith(Unit newUnits) {
+        return !isCompatibleWith(newUnits);
+    }
+
+    private boolean isCompatibleWith(Unit newUnits) {
+        if (isBaseUnit() && newUnits.isBaseUnit()) {
+            return name.equals(newUnits.name);
+        }
         if (isBaseUnit()) {
             return name.equals(newUnits.baseUnits.name);
         }
+        if (newUnits.isBaseUnit()) {
+            return baseUnits.name.equals(newUnits.name);
+        }
+
         return baseUnits.equals(newUnits.baseUnits);
     }
 
