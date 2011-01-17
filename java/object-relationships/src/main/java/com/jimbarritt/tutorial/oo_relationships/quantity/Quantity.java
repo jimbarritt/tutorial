@@ -1,5 +1,9 @@
 package com.jimbarritt.tutorial.oo_relationships.quantity;
 
+import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.centimetres;
+import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.litres;
+import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.metres;
+import static com.jimbarritt.tutorial.oo_relationships.quantity.Unit.millilitres;
 import static java.lang.Math.*;
 
 public class Quantity {
