@@ -1,11 +1,11 @@
-package com.jimbarritt.tutorial.oo_relationships.quantity;
+package com.jimbarritt.tutorial.oo_relationships.length;
 
 import org.junit.*;
 
 import java.util.*;
 
-import static com.jimbarritt.tutorial.oo_relationships.quantity.DistanceUnit.centimetres;
-import static com.jimbarritt.tutorial.oo_relationships.quantity.DistanceUnit.metres;
+import static com.jimbarritt.tutorial.oo_relationships.length.DistanceUnit.centimetres;
+import static com.jimbarritt.tutorial.oo_relationships.length.DistanceUnit.metres;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;

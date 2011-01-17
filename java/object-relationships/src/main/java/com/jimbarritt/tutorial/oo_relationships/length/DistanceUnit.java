@@ -1,6 +1,6 @@
-package com.jimbarritt.tutorial.oo_relationships.quantity;
+package com.jimbarritt.tutorial.oo_relationships.length;
 
-import static com.jimbarritt.tutorial.oo_relationships.quantity.Length.lengthOf;
+import static com.jimbarritt.tutorial.oo_relationships.length.Length.lengthOf;
 
 public enum DistanceUnit {
 

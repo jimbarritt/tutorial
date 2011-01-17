@@ -1,7 +1,7 @@
-package com.jimbarritt.tutorial.oo_relationships.quantity;
+package com.jimbarritt.tutorial.oo_relationships.length;
 
 
-import static com.jimbarritt.tutorial.oo_relationships.quantity.DistanceUnit.centimetres;
+import static com.jimbarritt.tutorial.oo_relationships.length.DistanceUnit.centimetres;
 
 public class Length {
 
