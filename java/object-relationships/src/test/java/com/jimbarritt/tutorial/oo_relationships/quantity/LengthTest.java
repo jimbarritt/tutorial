@@ -9,9 +9,12 @@ import static org.hamcrest.Matchers.is;
 
 public class LengthTest {
 
+    @Test
+    public void ten_centimetres_is_ten_centimetres() {
+        assertThat(new Length(10, centimetres), is(new Length(10, centimetres)));
+    }
 
     @Test
-    @Ignore("Waiting to implement equality")
     public void ten_centimetres_is_one_tenth_of_a_metre() {
         Length tenCentimetres = new Length(10, centimetres);
         Length oneTenthOfAMetre = new Length(0.1, metres);
