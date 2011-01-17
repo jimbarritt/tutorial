@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
-public class QuantityTest {
+public class LengthTest {
 
     private static final Quantity TEN_CENTIMETRES = new Quantity(10, centimetres);
     private static final Quantity TWENTY_CENTIMETRES = new Quantity(20, centimetres);
@@ -36,6 +36,7 @@ public class QuantityTest {
     public void ten_centimetres_equals_one_tenth_of_a_metre() {
         assertThat(TEN_CENTIMETRES, is(ONE_TENTH_OF_A_METRE));
     }
+
 
     @Test
     public void renders_as_string() {
