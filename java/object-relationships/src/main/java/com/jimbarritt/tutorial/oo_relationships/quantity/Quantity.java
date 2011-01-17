@@ -1,7 +1,6 @@
 package com.jimbarritt.tutorial.oo_relationships.quantity;
 
-import static java.lang.Double.compare;
-import static java.lang.Math.abs;
+import static java.lang.Math.*;
 
 public class Quantity {
     private double amount;
@@ -25,11 +24,7 @@ public class Quantity {
         Quantity otherQuantity = (Quantity) o;
         Quantity otherQuantityInSameUnits = otherQuantity.to(units);
 
-        if(abs(this.amount - otherQuantityInSameUnits.amount) > 0.0000001) {
-            return false;
-        }
-
-        if(this.units != otherQuantityInSameUnits.units) {
+        if (abs(this.amount - otherQuantityInSameUnits.amount) > 0.0000001) {
             return false;
         }
 
