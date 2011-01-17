@@ -1,48 +1,73 @@
 package com.jimbarritt.tutorial.oo_relationships.quantity;
 
-public enum Unit {
+public class Unit {
 
-    centimetres,
-    metres(centimetres, 100),
-    millilitres,
-    litres;
+    public static final Unit centimetres = new Unit("centimetres");
+    public static final Unit metres = new Unit("metres", centimetres, 100);
+
+    public static final Unit millilitres = new Unit("millilitres");
+    public static final Unit litres = new Unit("litres", millilitres, 1000);
+
+    private double conversionFactor;
+    private String name;
+    private Unit baseUnits;
 
 
-    private Unit() {
-
+    private Unit(String name) {
+        this(name, null, 0);
     }
 
-    private Unit(Unit baseUnit, double conversionFactor) {
-
+    private Unit(String name, Unit baseUnits, double conversionFactor) {
+        this.name = name;
+        this.baseUnits = baseUnits;
+        this.conversionFactor = conversionFactor;
     }
 
     public QuantityConverter convert(double amount) {
         return new QuantityConverter(amount, this);
     }
 
-    public static class QuantityConverter {
-            private final double amount;
-            private final Unit originalUnits;
+    public String toString() {
+        return name;
+    }
 
-            public QuantityConverter(double amount, Unit originalUnits) {
-                this.amount = amount;
-                this.originalUnits = originalUnits;
-            }
-
-            public Quantity to(Unit newUnits) {
-                if (originalUnits == newUnits) {
-                    return new Quantity(amount, originalUnits);
-                }
-
-                if (originalUnits == metres && newUnits == centimetres) {
-                    return new Quantity(amount * 100, newUnits);
-                }
-
-                if (originalUnits == litres && newUnits == millilitres) {
-                    return new Quantity(amount * 1000, newUnits);
-                }
-
-                throw new CannotConvertUnitsException(originalUnits, newUnits);
-            }
+    Quantity convertTo(double amount, Unit newUnits) {
+        if (this == newUnits) {
+            return new Quantity(amount, this);
         }
+
+        if (this.isNotCompatibleWith(newUnits)) {
+            throw new CannotConvertUnitsException(this, newUnits);
+        }
+
+        double amountInBaseUnits = toBaseUnitAmount(amount);
+        double amountInNewUnits = newUnits.fromBaseAmount(amountInBaseUnits);
+
+        return new Quantity(amountInNewUnits, newUnits);
+    }
+
+    private boolean isNotCompatibleWith(Unit newUnits) {
+        if (isBaseUnit()) {
+            return name.equals(newUnits.baseUnits.name);
+        }
+        return baseUnits.equals(newUnits.baseUnits);
+    }
+
+    private double toBaseUnitAmount(double amount) {
+        if (conversionFactor == 0) {
+            return amount;
+        }
+        return amount * conversionFactor;
+    }
+
+    private double fromBaseAmount(double amountInBaseUnits) {
+        if (conversionFactor == 0) {
+            return amountInBaseUnits;
+        }
+        return amountInBaseUnits / conversionFactor;
+    }
+
+    private boolean isBaseUnit() {
+        return this.baseUnits == null;
+    }
 }
