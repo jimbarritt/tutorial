@@ -1,5 +1,7 @@
 package com.jimbarritt.tutorial.oo_relationships.quantity;
 
+import static com.jimbarritt.tutorial.oo_relationships.quantity.Length.lengthOf;
+
 public enum DistanceUnit {
 
     centimetres(1), metres(100);
@@ -10,7 +12,7 @@ public enum DistanceUnit {
         this.toCentimetresFactor = toCentimetresFactor;
     }
 
-    public double convertToCentimetres(double value) {
-        return value * toCentimetresFactor;
+    public Length toCentimetres(Length length) {
+        return lengthOf(length.doubleValue() * toCentimetresFactor, centimetres);
     }
 }

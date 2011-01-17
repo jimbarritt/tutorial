@@ -8,6 +8,10 @@ public class Length {
     private final double value;
     private final DistanceUnit distanceUnit;
 
+    public static Length lengthOf(double value, DistanceUnit distanceUnit) {
+        return new Length(value, distanceUnit);
+    }
+
     public Length(double value, DistanceUnit distanceUnit) {
         this.value = value;
         this.distanceUnit = distanceUnit;
@@ -15,23 +19,20 @@ public class Length {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
         Length length = (Length) o;
-
-        if (Double.compare(this.asCentimetres(), length.asCentimetres()) != 0) return false;
-
-        return true;
+        if (this.distanceUnit == centimetres && length.distanceUnit == centimetres) {
+            return (Double.compare(this.value, length.value) == 0);
+        }
+        return this.asCentimetres().equals(length.asCentimetres());
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        temp = value != +0.0d ? Double.doubleToLongBits(value) : 0L;
-        result = (int) (temp ^ (temp >>> 32));
-        return result;
+        if (this.distanceUnit == centimetres) {
+            long temp = value != +0.0d ? Double.doubleToLongBits(value) : 0L;
+            return (int) (temp ^ (temp >>> 32));
+        }
+        return this.asCentimetres().hashCode();
     }
 
     @Override public String toString() {
@@ -41,7 +42,11 @@ public class Length {
                 '}';
     }
 
-    private double asCentimetres() {
-        return this.distanceUnit.convertToCentimetres(this.value);
+    private Length asCentimetres() {
+        return this.distanceUnit.toCentimetres(this);
+    }
+
+    double doubleValue() {
+        return value;
     }
 }
