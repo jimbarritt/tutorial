@@ -6,7 +6,6 @@ public class Quantity {
     private double amount;
     private Unit units;
 
-
     public Quantity(double amount, Unit units) {
         this.amount = amount;
         this.units = units;
