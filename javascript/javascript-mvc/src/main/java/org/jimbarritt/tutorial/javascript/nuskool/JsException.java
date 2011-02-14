@@ -30,6 +30,6 @@ class JsException extends RuntimeException {
 
     private String createJsStacktrace() {
 //        return "at:\n\t some_path/to/the/js. (" + filename + ":" + lineNumber + ")";
-        return "\n\tat org.jimbarritt.tutorial.javascript.nuskool.CustomiseAJavaException.main(CustomiseAJavaException.java:6)";
+        return "(some_file.js) \n\t at " + new File("./src/test/js/nu_skool_testing/example_javascript_from_jvm.js").getAbsolutePath() + ":38";
     }
 }
