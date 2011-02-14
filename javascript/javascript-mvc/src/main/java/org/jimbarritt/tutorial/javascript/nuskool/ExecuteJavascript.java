@@ -9,9 +9,7 @@ public class ExecuteJavascript {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("js");
 
-        String jsFile = "./src/test/js/nu_skool_testing/example_javascript_from_jvm.js";
-
-        executeJs(engine, jsFile);
+        executeJs(engine, "./src/test/js/nu_skool_testing/example_javascript_from_jvm.js");
     }
 
     private static void executeJs(ScriptEngine engine, String jsFile) {
