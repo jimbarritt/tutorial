@@ -1,6 +1,6 @@
-var mvc = mvc || {};
+var objectDefinition = objectDefinition || {};
 
-mvc.simpleObject = function() {
+objectDefinition.simpleObject = function() {
 
     var somePrivateData = "I am a secret";
 
