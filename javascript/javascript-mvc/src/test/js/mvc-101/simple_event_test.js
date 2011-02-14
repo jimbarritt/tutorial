@@ -4,8 +4,13 @@ TestCase("simple event behaviours", {
 
     tearDown : function() {},
 
-    test_waggles : function () {
+    test_private_methods : function () {
+        var simpleObject = mvc.simpleObject();
 
-        assertEquals("9 should !== 8", 9, 8);
+        var result = simpleObject.publicMethod();
+
+        assertEquals("This is my private secret: I am a secret", result);
+
+        assertTrue("somePrivateData should not be defined", lang.isNotDefined(simpleObject.somePrivateData));
     }
 });
