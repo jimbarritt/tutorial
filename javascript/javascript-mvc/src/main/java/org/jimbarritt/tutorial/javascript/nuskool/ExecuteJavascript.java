@@ -10,6 +10,7 @@ public class ExecuteJavascript {
         ScriptEngine engine = manager.getEngineByName("js");
 
         executeJs(engine, "./src/test/js/nu_skool_testing/example_javascript_from_jvm.js");
+
     }
 
     private static void executeJs(ScriptEngine engine, String jsFile) {
@@ -18,8 +19,8 @@ public class ExecuteJavascript {
             reader = new FileReader(jsFile);
             engine.eval(reader);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Throwable t) {
+            t.printStackTrace();
         } finally {
             tryToClose(reader);
         }
