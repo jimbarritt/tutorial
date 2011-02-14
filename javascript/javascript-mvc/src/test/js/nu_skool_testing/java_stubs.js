@@ -3,3 +3,8 @@
  */
 
 var println = function(message) {};
+
+var org = org || {};
+org.junit = org.junit || {};
+org.junit.Assert = org.junit.Assert || {};
+org.junit.Assert.assertEquals = function() {};

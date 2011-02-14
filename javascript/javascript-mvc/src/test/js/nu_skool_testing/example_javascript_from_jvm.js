@@ -6,6 +6,11 @@ var console = {
     }
 }
 
+var assertEquals = function(message, expected, actual) {
+    org.junit.Assert.assertEquals(message, expected, actual);
+}
+
+
 bob.foobar = function() {
 
     var internal = "I is a secret";
@@ -29,3 +34,5 @@ bob.foobar = function() {
 var aFoobar = bob.foobar();
 
 aFoobar.say_cheese();
+
+assertEquals("2 should == 3", "2", "3");
