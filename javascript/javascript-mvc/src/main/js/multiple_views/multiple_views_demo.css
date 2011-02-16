@@ -1,0 +1,26 @@
+body {
+    font-family:Verdana;
+}
+
+.ui-control {
+    float:left;
+    width:300px;
+    border:2px solid #ccc;
+    margin:5px;
+    padding:10px;
+    background-color:#eee;
+}
+
+.ui-control h2 {
+    font-size:smaller;
+}
+
+.ui-control textarea {
+    width:100%;
+    padding: 5px;
+    border: 4px solid #ccc;
+}
+
+.ui-control.display-text {
+    height: 200px;
+}

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="./multiple_views_demo.css"/>
+</head>
+
+<body>
+
+<div id="Content">
+
+    <div id="Instructions">
+        <h1>Demonstration of Javascript MVC</h1>
+
+        <p>
+            This is a demo of a simple MVC structure. You will find below three views which share the same model. There
+            are two text areas and a read-only display area. You should find that if you type in either of the text
+            areas, the other area and the readonly view will be magically updated.
+        </p>
+    </div>
+
+    <div id="Demonstration">
+        <div class="ui-control">
+            <h2>This is an automatically updating text area</h2>
+            <textarea name="input">Type something here...</textarea>
+        </div>
+
+        <div class="ui-control">
+            <h2>This is an automatically updating text area</h2>
+            <textarea name="input">Type something here...</textarea>
+        </div>
+
+        <div class="ui-control">
+            <h2>This one is a manual update</h2>
+            <textarea name="input">Type something here...</textarea>
+            <input type="button" value="Update..." />
+        </div>
+
+        <div class="ui-control display-text">
+            <h2>This one displays the text readonly</h2>
+            <p>Type something here...</p>
+        </div>
+
+    </div>
+</div>
+</body>
+
+
+</html>
