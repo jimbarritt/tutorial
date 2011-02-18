@@ -1,0 +1,73 @@
+<html>
+ <head>
+     <link type="text/css" rel="stylesheet" href="./implicit_declaration.css"/>
+
+     <!-- Google Syntax Highlighter -->
+       <script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shCore.js"></script>
+       <script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shBrushJScript.js"></script>
+       <link type="text/css" rel="stylesheet" href="../../../../lib/js/syntax_highlighter/styles/shCoreDefault.css"/>
+       <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+ </head>
+<body>
+<div id="section:global" class="section">
+    <h2>Global</h2>
+    <script id="global-functions" type="text/javascript">
+
+        function sayHello(name) {
+            alert("Hello " + name + " from a global function");
+        }
+
+        function sayHelloWithAForm(form) {
+            sayHello(form.personName.value);
+        }
+
+    </script>
+
+    <p>To call a global function : <code>sayHello("Jim")</code>, click <a href="javascript:sayHello('Jim');">here</a>
+
+	<pre class="brush: js;">
+&lt;script id="global-functions" type="text/javascript"&gt;
+
+    function sayHello(name) {
+        alert("Hello " + name + " from a global function");
+    }
+
+&lt;/script&gt;
+
+&lt;p&gt;To call a global function : &lt;code&gt;sayHello("Jim")&lt;/code&gt;, click &lt;a href="javascript:sayHello('Jim');"&gt;here&lt;/a&gt;
+
+	</pre>
+
+
+    <p>You could maybe accept input from a form:</p>
+
+      <div id="hello-demo">
+        <form id="say-hello-form" action="">
+            <input type="text" name="personName" value="Linda"></input>
+            <input type="button" value="Say Hello" onclick="sayHelloWithAForm(this.form);"></input>
+        </form>
+    </div>
+
+<pre class="brush: js;">
+&lt;form id="say-hello-form" action=""&gt;
+	&lt;input type="text" name="personName" value="Linda"&gt;&lt;/input&gt;
+	&lt;input type="button" value="Say Hello" onclick="sayHelloWithAForm(this.form);"&gt;&lt;/input&gt;
+&lt;/form&gt;
+
+&lt;script id="global-functions" type="text/javascript"&gt;
+
+    function sayHelloWithAForm(form) {
+    	sayHello(form.personName.value);
+    }
+
+&lt;/script&gt;
+</pre>
+
+
+
+</div>
+<!-- end section -->
+
+</body>
+</html>

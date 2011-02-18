@@ -1,0 +1,62 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="./object_definition.css"/>
+    <script type="text/javascript" src="object_definition.js"></script>
+
+    <!-- Google Syntax Highlighter -->
+    <script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shBrushJScript.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../../lib/js/syntax_highlighter/styles/shCoreDefault.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</head>
+<body>
+
+<div id="section:insert_id_here!" class="section">
+
+    <h2>Object Definitions</h2>
+
+    <p>Encapsulation is a key principle of OO design, here's one way to do it in JavaScript</p>
+
+    <pre class="brush: js;">
+var objectDefinition = objectDefinition || {};
+
+objectDefinition.simpleObject = function() {
+
+    var somePrivateData = "I am a secret";
+
+    var self =  {
+        publicMethod : function() {
+            return private_send_message(somePrivateData);
+        }
+    };
+
+    function private_send_message(message) {
+       console.log("Sending: " + message);
+       return "This is my private secret: " + message;
+    }
+
+    return self;
+}
+</pre>
+
+    <script type="text/javascript">
+        var aSimpleObject = objectDefinition.simpleObject();
+
+        aSimpleObject.publicMethod();
+    </script>
+
+<p>
+    This is how we call it (show your console to see it)...
+</p>
+
+
+    <pre class="brush: js;">
+var aSimpleObject = objectDefinition.simpleObject();
+
+aSimpleObject.publicMethod();
+    </pre>
+</div>
+
+</body>
+</html>
