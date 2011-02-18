@@ -20,5 +20,21 @@ TestCase("demonstrate object definition", {
 
     test_cannot_access_private_methods : function() {
         assertTrue("private_send_message should not be defined", lang.isNotDefined(simpleObject.private_send_message));
+    },
+
+    test_explicitly_declared_members : function() {
+        var someClosure = function() {
+
+            implicitly_declared = "I am implicit!";
+
+            var self = {};
+
+            return self;
+        }
+
+        var aClosure = someClosure();
+
+        assertThat("I am implicit!", implicitly_declared);
+
     }
 });

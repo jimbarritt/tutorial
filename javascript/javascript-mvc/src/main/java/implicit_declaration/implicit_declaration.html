@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="./implicit_declaration.css"/>
+    <script type="text/javascript" src="source_loader.js"></script>
+    <script type="text/javascript" src="implicit_declaration.js"></script>
+
+    <!-- Google Syntax Highlighter -->
+    <script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../../../../lib/js/syntax_highlighter/styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div id="Content">
+    <h1>This example demonstrates what happens when you don't use VAR!</h1>
+
+    <pre id="exampleCode" class="brush: js;">
+var implicit = implicit || {};
+
+
+implicit.someObject = function() {
+
+    self = {
+
+        sayHello : function(name) {
+            console.log("hello: " + name);
+        }
+
+    };
+
+    return self;
+}
+
+anObject = implicit.someObject();
+
+anObject.sayHello("Jim");
+
+self.sayHello("Oops, I am now global!");
+    </pre>
+
+</div>
+</body>
+
+
+</html>
