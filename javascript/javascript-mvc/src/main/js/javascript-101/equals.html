@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link type="text/css" rel="stylesheet" href="./implicit_declaration.css"/>
+    <link type="text/css" rel="stylesheet" href="./javascript-101.css"/>
 
     <!-- Google Syntax Highlighter -->
     <script type="text/javascript" src="../../../../lib/js/syntax_highlighter/scripts/shCore.js"></script>
@@ -8,13 +8,32 @@
     <link type="text/css" rel="stylesheet" href="../../../../lib/js/syntax_highlighter/styles/shCoreDefault.css"/>
     <script type="text/javascript">SyntaxHighlighter.all();</script>
 
+    <script type="text/javascript" src="./equals.js"></script>
+
+
 </head>
 <body>
 
 <div id="section:equals!" class="section">
 
     <h1>When is == != ?</h1>
-    <p>Javascript has two versions of equals. Let's try the first:</p>
+
+    <p>Javascript has two versions of equals. To all intents and purposes, they seem to work the same!</p>
+
+    <p>However, they do not. The two types are <code>==</code> and <code>===</code>. The first one coerces any variables
+        it finds
+        into the type of the LHS. So</p>
+
+    <div class="js-output">
+        <div id="resultsTable" class="table">
+            <div class="table-header">
+                <div class="column-header">Expression</div>
+                <div class="column-header">Evaluates to</div>
+            </div>
+
+        </div>
+    </div>
+
 
 
 

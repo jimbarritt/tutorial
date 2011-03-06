@@ -1,3 +1,42 @@
 .section {
     margin-bottom: 50px;
 }
+
+.js-output {
+    font-family: "Courier New";
+    width: 600px;
+}
+
+.table {
+    margin: 0;
+    border: solid 4px #778899;
+    padding: 0;
+    background-color: #eeeeee;
+    height:auto;
+    overflow:hidden;
+    width:100%;
+}
+
+.table-header {
+    width: 100%;
+    background-color: #add8e6;
+    font-weight:bold;
+}
+
+.table-row {
+    clear: both;
+}
+
+.column-header {
+    float: left;
+    padding: 10px;
+    background-color: #add8e6;
+    width:46.8%;
+}
+
+.table-cell {
+    float: left;
+    padding: 10px;
+    width:46.8%;
+}
+
