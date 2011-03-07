@@ -1,5 +1,38 @@
+body {
+    font-family:Verdana;
+}
+
+
+body {
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+h1 {
+    background-color: #d3d3d3;
+    width:auto;
+    display:block;
+    padding:10px;
+    margin:0;
+}
+
+p {
+    margin-left:20px;
+}
+
 .section {
     margin-bottom: 50px;
+}
+
+.navigation {
+    padding:10px;
+    background-color:#d3d3d3;
+}
+
+.navigation a {
+    text-decoration:none;
+    margin-right:20px;
 }
 
 .js-output {
@@ -8,7 +41,8 @@
 }
 
 .table {
-    margin: 0;
+    margin-left:20px;
+
     border: solid 4px #778899;
     padding: 0;
     background-color: #eeeeee;
