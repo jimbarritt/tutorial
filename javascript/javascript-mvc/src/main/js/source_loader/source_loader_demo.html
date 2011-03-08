@@ -2,11 +2,15 @@
 
 <head>
     <link type="text/css" rel="stylesheet" href="../global.css"/>
-    <link type="text/css" rel="stylesheet" href="./source_loader.js"/>
+    <link type="text/css" rel="stylesheet" href="./source_loader_demo.css"/>
     <link type="text/css" rel="stylesheet" href="../javascript-101/javascript-101.css"/>
 
     <script type="text/javascript" src="./source_loader.js"></script>
-
+    <script type="text/javascript">
+        window.onload = function() {
+            sourceloader.loadSourceInto("./source_loader.js", "code-sample");
+        }
+    </script>
 </head>
 
 <body>
@@ -14,12 +18,11 @@
 <div id="Content">
     <h1>This example demonstrates how to load javascript source dynamically into a page...</h1>
 
-    <script type="text/javascript">
-        sourceloader.loadSourceInto("./source_loader.js", "code-sample");
-    </script>
     <pre id="code-sample">
 
     </pre>
+
+
 
 </div>
 

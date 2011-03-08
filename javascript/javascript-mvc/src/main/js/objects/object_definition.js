@@ -6,7 +6,7 @@ objectDefinition.simpleObject = function() {
 
     var self = {
         publicMethod : function() {
-            return private_send_message(somePrivateData);
+            private_send_message(somePrivateData);
         },
 
         anotherMethod : function() {

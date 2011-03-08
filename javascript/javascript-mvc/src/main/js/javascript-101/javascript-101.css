@@ -17,6 +17,10 @@ h1 {
     margin:0;
 }
 
+form {
+    padding:20px;
+}
+
 p {
     margin-left:20px;
 }
