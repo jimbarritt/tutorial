@@ -7,13 +7,13 @@ multiview.controller = function(dom) {
             console.log("Controller.init");
             var model = multiview.model("I have been initialised by the javascript!");
 
-            initControl(model, dom, "display-text", multiview.readOnlyDisplayView);
-            initControl(model, dom, "manual-update-text", multiview.manualTextBoxView);
-            initControl(model, dom, "automatic-update-text", multiview.automaticTextBoxView);
+            initControls(model, dom, "display-text", multiview.readOnlyDisplayView);
+            initControls(model, dom, "manual-update-text", multiview.manualTextBoxView);
+            initControls(model, dom, "automatic-update-text", multiview.automaticTextBoxView);
         }
     }
 
-    function initControl(model, dom, controlClassName, initFunction) {
+    function initControls(model, dom, controlClassName, initFunction) {
         var controlElements = dom.getElementsByClassName(controlClassName);
         for (var i = 0; i < controlElements.length; i++) {
             initFunction(model, dom, controlElements[i]);
