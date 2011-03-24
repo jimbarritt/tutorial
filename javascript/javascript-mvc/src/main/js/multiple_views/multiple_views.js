@@ -6,6 +6,7 @@ multiview.controller = function(dom) {
         connectToDom : function() {
             console.log("Controller.init");
             var model = multiview.model("I have been initialised by the javascript!");
+
             initControl(model, dom, "display-text", multiview.readOnlyDisplayView);
             initControl(model, dom, "manual-update-text", multiview.manualTextBoxView);
             initControl(model, dom, "automatic-update-text", multiview.automaticTextBoxView);
@@ -22,8 +23,6 @@ multiview.controller = function(dom) {
     return self;
 }
 
-var someFunction = function() {
-};
 multiview.model = function(defaultText) {
 
     var text = defaultText;
