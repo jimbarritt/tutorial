@@ -6,30 +6,16 @@ multiview.controller = function(dom) {
         connectToDom : function() {
             console.log("Controller.init");
             var model = multiview.model("I have been initialised by the javascript!");
-            initReadOnlyDisplayViews(model, dom);
-            initManualTextBoxViews(model, dom);
-            initAutomaticTextBoxViews(model, dom);
+            initControl(model, dom, "display-text", multiview.readOnlyDisplayView);
+            initControl(model, dom, "manual-update-text", multiview.manualTextBoxView);
+            initControl(model, dom, "automatic-update-text", multiview.automaticTextBoxView);
         }
     }
 
-    function initReadOnlyDisplayViews(model, dom) {
-        var displayViewElements = dom.getElementsByClassName("display-text");
-        for (var i = 0; i < displayViewElements.length; i++) {
-            multiview.readOnlyDisplayView(model, dom, displayViewElements[i]);
-        }
-    }
-
-    function initManualTextBoxViews(model, dom) {
-        var manualTextBoxElements = dom.getElementsByClassName("manual-update-text");
-        for (var i = 0; i < manualTextBoxElements.length; i++) {
-            multiview.manualTextBoxView(model, dom, manualTextBoxElements[i]);
-        }
-    }
-
-    function initAutomaticTextBoxViews(model, dom) {
-        var automaticTextBoxElements = dom.getElementsByClassName("automatic-update-text");
-        for (var i = 0; i < automaticTextBoxElements.length; i++) {
-            multiview.automaticTextBoxView(model, dom, automaticTextBoxElements[i]);
+    function initControl(model, dom, controlClassName, initFunction) {
+        var controlElements = dom.getElementsByClassName(controlClassName);
+        for (var i = 0; i < controlElements.length; i++) {
+            initFunction(model, dom, controlElements[i]);
         }
     }
 
