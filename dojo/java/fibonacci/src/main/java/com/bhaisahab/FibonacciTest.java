@@ -38,5 +38,14 @@ public class FibonacciTest {
         assertThat(new Fibonacci().position(5), is(5));
     }
 
+    @Test
+    public void returnsEightWhenSix() {
+        assertThat(new Fibonacci().position(6), is(8));
+
+        assertThat(new Fibonacci().position(100), is(354224848179261915075))
+    }
+
+
+
 
 }
