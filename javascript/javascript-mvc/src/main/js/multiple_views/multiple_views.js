@@ -1,6 +1,5 @@
 var multiview = multiview || {};
 
-
 multiview.controller = function(dom) {
     var self = {
         connectToDom : function() {
@@ -28,7 +27,7 @@ multiview.model = function(defaultText) {
     var text = defaultText;
     var listeners = new Array();
 
-    var self = {
+        var self = {
         addListener : function(viewCallbackFunction) {
             console.log("Registering listener : " + viewCallbackFunction.name);
             listeners.push(viewCallbackFunction);
