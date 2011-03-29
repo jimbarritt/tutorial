@@ -9,7 +9,9 @@ public class GreeterTest {
 
     @Test
     public void says_hello_to_jim() {
-        Greeter greeter = new Greeter();
+        GreetingService greetingService = new GreetingService();
+        Greeter greeter = new Greeter(greetingService);
+
         String message = greeter.sayHelloTo("Jim");
         assertThat(message, is("Hello 'Jim'"));
     }
