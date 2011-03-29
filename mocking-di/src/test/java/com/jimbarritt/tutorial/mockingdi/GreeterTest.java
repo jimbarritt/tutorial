@@ -16,7 +16,7 @@ public class GreeterTest {
 
         when(greetingService.formatHelloMessageFor("Jim")).thenReturn("Hello 'Jim'");
 
-        String message = greeter.sayHelloTo("Jim");
-        assertThat(message, is("Hello 'Jim'"));
+        String message = greeter.sayHelloTo("Fabio");
+        assertThat(message, is("Hello 'Fabio'"));
     }
 }
