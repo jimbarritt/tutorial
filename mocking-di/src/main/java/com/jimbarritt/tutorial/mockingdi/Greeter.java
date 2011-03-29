@@ -1,5 +1,7 @@
 package com.jimbarritt.tutorial.mockingdi;
 
+import static java.lang.String.format;
+
 public class Greeter {
     private GreetingService greetingService;
 
