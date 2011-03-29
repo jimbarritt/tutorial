@@ -3,18 +3,14 @@ package com.jimbarritt.tutorial.mockingdi;
 import static java.lang.String.format;
 
 public class Greeter {
+    private GreetingService greetingService;
+
     public Greeter(GreetingService greetingService) {
-
-    }
-
-    public Greeter() {
+        this.greetingService = greetingService;
     }
 
     public String sayHelloTo(String name) {
-        return format("Hello '%s'", name);
+        return greetingService.formatHelloMessageFor(name);
     }
 
-    public void setGreetingService(GreetingService greetingService) {
-
-    }
 }
