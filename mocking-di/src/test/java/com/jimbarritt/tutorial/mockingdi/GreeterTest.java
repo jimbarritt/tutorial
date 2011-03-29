@@ -2,12 +2,13 @@ package com.jimbarritt.tutorial.mockingdi;
 
 import org.junit.*;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
+import static org.mockito.Mockito.*;
 
+/**
+ * Need a better example, the GreetingService wasn't real enough from some people
+ */
 public class GreeterTest {
     @Test
     public void says_hello_to_jim() {
